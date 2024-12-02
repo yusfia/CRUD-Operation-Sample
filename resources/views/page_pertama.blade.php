@@ -18,10 +18,17 @@
                 <td>{{$item->street}}</td>
                 <td>{{$item->postal_code}}</td>
                 <td>
-                    <a href="{{route('address.edit', $item->id)}}" class="btn btn-sm btn-warning">Edit</a>
-                    <a href="{{route('address.delete', $item->id)}}" class="btn btn-sm btn-danger">Delete</a>
+                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal{{$item->id}}">
+                        Edit
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}">
+                        Delete
+                    </button>
+                    @include('modal.edit_address_modal')
+                    @include('modal.delete_address_modal')
                 </td>
             </tr>
+
         @endforeach
         </tbody>
     </table>
