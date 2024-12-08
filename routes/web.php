@@ -32,7 +32,7 @@ Route::get('/pagetwo', [PageKeduaController::class, 'index'])->name('pagetwo');
 Route::get('/pagethree', [PageKetigaController::class, 'index'])->name('pagethree');
 Route::get('/pageone/address/', [PagePertamaController::class, 'add'])->name('address.add');
 Route::post('/pageone/address/create', [PagePertamaController::class, 'create'])->name('address.create');
-Route::get('/pageone/address/delete/{id}', [PagePertamaController::class, 'destroy'])->name('address.delete');
+Route::delete('/pageone/address/delete/{id}', [PagePertamaController::class, 'destroy'])->name('address.delete');
 Route::get('/pageone/address/edit/{id}', [PagePertamaController::class, 'edit'])->name('address.edit');
 Route::put('/pageone/address/update/{id}', [PagePertamaController::class, 'update'])->name('address.update');
 
