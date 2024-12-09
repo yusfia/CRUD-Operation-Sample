@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Address;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use function Psy\debug;
 
 class PagePertamaController extends Controller {
+    public function __construct() {
+        $this->middleware(['role:admin']);
+
+    }
+
     public function index(Request $request){
 
         $user = User::find(1);

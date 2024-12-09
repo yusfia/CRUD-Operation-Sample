@@ -5,6 +5,7 @@ use App\Http\Controllers\PageKeduaController;
 use App\Http\Controllers\PageKetigaController;
 use App\Http\Controllers\PagePertamaController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,7 @@ Route::delete('/pageone/address/delete/{id}', [PagePertamaController::class, 'de
 Route::get('/pageone/address/edit/{id}', [PagePertamaController::class, 'edit'])->name('address.edit');
 Route::put('/pageone/address/update/{id}', [PagePertamaController::class, 'update'])->name('address.update');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
